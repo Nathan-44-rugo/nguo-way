@@ -1,90 +1,109 @@
+import Link from 'next/link';
+
 interface ShopCardProps {
-name: string;
-tagline: string;
-style: string;
-badge: string;
-cardType: 'vicks' | 'egos' | 'jans';
-isActive: boolean;
-onSelect: () => void;
+  name: string;
+  tagline: string;
+  style: string;
+  badge: string;
+  cardType: 'vicks' | 'egos' | 'jans';
+  isActive: boolean;
+  onSelect: () => void;
 }
 
 export default function ShopCard({
-name,
-tagline,
-style,
-badge,
-cardType,
-isActive,
-onSelect,
+  name,
+  tagline,
+  style,
+  badge,
+  cardType,
+  isActive,
+  onSelect,
 }: ShopCardProps) {
-return (
-<div 
-    onClick={onSelect}
-    className={`group flex flex-col justify-between items-center py-12 px-6 border cursor-pointer transition-all duration-300 rounded-[2px] ${
-    isActive 
-        ? 'border-[#C9AA4B]/30 bg-neutral-50/50 shadow-[0_4px_24px_rgba(188,163,116,0.05)]' 
-        : 'border-transparent hover:border-[#BCA374]/20'
-    }`}
->
-    {/* Dynamic Render block matching the unique logo of each boutique */}
-    <div className="w-full flex flex-col items-center justify-center h-28 mb-10 select-none">
-    
-    {/* 1. Vick's Corner Logo */}
-    {cardType === 'vicks' && (
-        <div className="text-center flex flex-col items-center">
-        {/* Elegant deep green cursive script */}
-        <span className="font-serif italic text-5xl text-[#1E3B27] font-light leading-none pr-3">
-            Vick&apos;s
-        </span>
-        {/* Wide caps serif */}
-        <span className="font-serif text-3xl font-extrabold tracking-[0.22em] text-[#1E3B27] leading-none mt-2">
-            CORNER
-        </span>
-        </div>
-    )}
+  const shopRoutes: Record<string, string> = {
+    vicks: '/vicks-corner',
+    egos: '/egos-boutique',
+    jans: '/jans-shop',
+  };
 
-    {/* 2. EGO's Boutique Logo */}
-    {cardType === 'egos' && (
-        <div className="text-center flex flex-col items-center">
-        {/* Vibrant green modern sans tag */}
-        <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-[#22C55E] mb-2 leading-none">
-            EGO&apos;s
-        </span>
-        {/* Delicate high-contrast cursive script */}
-        <span className="font-serif italic text-4xl text-neutral-900 font-light pr-2">
-            Boutique
-        </span>
-        </div>
-    )}
+  return (
+    <div
+      className={`group relative flex flex-col justify-between items-center py-14 px-8 border cursor-pointer ${
+        isActive
+          ? 'border-nw-gold/40 bg-nw-offwhite shadow-[0_8px_40px_rgba(163,131,86,0.08)]'
+          : 'border-nw-charcoal/10 hover:border-nw-gold/25 bg-transparent'
+      }`}
+      style={{ transition: 'all 800ms cubic-bezier(0.16, 1, 0.3, 1)' }}
+      onClick={onSelect}
+    >
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 h-[2px] bg-nw-gold"
+        style={{
+          transition: 'width 800ms cubic-bezier(0.16, 1, 0.3, 1)',
+          width: isActive ? '60%' : '0%',
+        }}
+      />
 
-    {/* 3. Jan's Shop Logo */}
-    {cardType === 'jans' && (
-        <div className="text-center flex flex-col items-center">
-        {/* Casual brush style script */}
-        <span className="font-serif italic text-3xl text-neutral-900 leading-none pl-1">
-            Jan&apos;s
-        </span>
-        {/* Bold black brushed paint stroke look */}
-        <span className="font-sans font-black text-5xl text-neutral-900 uppercase tracking-tight leading-none mt-1">
-            SHOP
-        </span>
-        </div>
-    )}
+      <div className="w-full flex flex-col items-center justify-center h-32 mb-10 select-none">
+        {cardType === 'vicks' && (
+          <div className="text-center flex flex-col items-center">
+            <span className="font-serif italic text-5xl md:text-6xl text-[#1E3B27] font-light leading-none">
+              Vick&apos;s
+            </span>
+            <span className="font-serif text-2xl md:text-3xl font-extrabold tracking-[0.3em] text-[#1E3B27] leading-none mt-3">
+              CORNER
+            </span>
+          </div>
+        )}
 
-    </div>
+        {cardType === 'egos' && (
+          <div className="text-center flex flex-col items-center">
+            <span className="font-mono text-[10px] font-bold uppercase tracking-[0.35em] text-nw-gold mb-3 leading-none">
+              EGO&apos;s
+            </span>
+            <span className="font-serif italic text-4xl md:text-5xl text-nw-ink font-light leading-none">
+              Boutique
+            </span>
+          </div>
+        )}
 
-    {/* Monospace Subtitles Centered underneath */}
-    <div className="text-center flex flex-col items-center gap-1">
-    <p className="font-mono text-[10px] tracking-wider text-neutral-400 font-light uppercase">
-        {style}
-    </p>
-    {badge && (
-        <p className="font-mono text-[10px] tracking-wider text-neutral-400 font-light uppercase">
-        {badge}
+        {cardType === 'jans' && (
+          <div className="text-center flex flex-col items-center">
+            <span className="font-serif italic text-3xl text-nw-ink leading-none">
+              Jan&apos;s
+            </span>
+            <span
+              className="text-5xl md:text-6xl text-nw-ink uppercase leading-none mt-1 select-none"
+              style={{
+                fontFamily: 'system-ui, -apple-system, sans-serif',
+                fontWeight: 900,
+                letterSpacing: '-0.02em',
+              }}
+            >
+              SHOP
+            </span>
+          </div>
+        )}
+      </div>
+
+      <div className="text-center flex flex-col items-center gap-2">
+        <p className="font-mono text-[10px] tracking-[0.2em] text-nw-charcoal/60 uppercase">
+          {style}
         </p>
-    )}
-    </div>
+        {badge && (
+          <p className="font-mono text-[9px] tracking-[0.15em] text-nw-gold/70 uppercase">
+            {badge}
+          </p>
+        )}
+      </div>
 
-</div>
-);
+      <Link
+        href={shopRoutes[cardType] || '#'}
+        className="mt-8 font-mono text-[9px] tracking-[0.3em] uppercase text-nw-charcoal/40 group-hover:text-nw-gold border-b border-transparent group-hover:border-nw-gold/30 pb-0.5"
+        style={{ transition: 'all 600ms cubic-bezier(0.16, 1, 0.3, 1)' }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        Visit Shop →
+      </Link>
+    </div>
+  );
 }
