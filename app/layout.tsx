@@ -31,9 +31,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    // suppressHydrationWarning is added here to ignore attribute injections by browser extensions
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${cormorant.variable} ${inter.variable} ${spaceMono.variable} antialiased bg-white text-[#1C1A1B]`}
+        className={`${cormorant.variable} ${inter.variable} ${spaceMono.variable} antialiased bg-white text-neutral-900`}
       >
         {children}
       </body>
