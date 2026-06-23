@@ -18,9 +18,9 @@ interface ShopPageProps {
 export default function ShopPage({ brandName, brandTagline, brandStyle, items }: ShopPageProps) {
   return (
     <div className="min-h-screen bg-nw-offwhite text-nw-ink font-serif">
-      {/* Navigation bar — taller tap targets on mobile, transparent/glassmorphic */}
+      {/* Navigation bar — taller, spacious tap targets and beautiful layout */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-nw-offwhite/90 backdrop-blur-md border-b border-nw-charcoal/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-16 py-3.5 sm:py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-16 py-5 sm:py-6 flex items-center justify-between">
           <Link
             href="/"
             className="font-mono text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] uppercase text-nw-charcoal/60 hover:text-nw-gold flex items-center gap-1.5 sm:gap-2 py-1.5"
@@ -35,22 +35,22 @@ export default function ShopPage({ brandName, brandTagline, brandStyle, items }:
         </div>
       </nav>
 
-      {/* Shop Banner — elegant Slate Gray (#D1DAD9) textured background with scaled typography */}
-      <header className="pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-36 md:pb-24 px-4 sm:px-6 bg-nw-slate/30 border-b border-nw-charcoal/10">
+      {/* Shop Banner — elegant Slate Gray (#D1DAD9) textured background with ample breathing room and scaled typography */}
+      <header className="pt-36 pb-16 sm:pt-44 sm:pb-24 md:pt-52 md:pb-32 px-4 sm:px-6 bg-nw-slate/30 border-b border-nw-charcoal/10">
         <div className="max-w-7xl mx-auto text-center">
           {brandStyle === 'vicks' && (
             <div className="flex flex-col items-center">
               <span className="font-serif italic text-5xl sm:text-6xl md:text-8xl text-[#1E3B27] font-light leading-none">
                 Vick&apos;s
               </span>
-              <span className="font-serif text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.2em] sm:tracking-[0.3em] text-[#1E3B27] leading-none mt-2 sm:mt-3">
+              <span className="font-serif text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-[0.2em] sm:tracking-[0.3em] text-[#1E3B27] leading-none mt-3 sm:mt-4">
                 CORNER
               </span>
             </div>
           )}
           {brandStyle === 'egos' && (
             <div className="flex flex-col items-center">
-              <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.3em] sm:tracking-[0.4em] text-nw-gold mb-2 sm:mb-3">
+              <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.3em] sm:tracking-[0.4em] text-nw-gold mb-3 sm:mb-4">
                 EGO&apos;s
               </span>
               <span className="font-serif italic text-4xl sm:text-5xl md:text-7xl text-nw-ink font-light leading-none">
@@ -64,21 +64,21 @@ export default function ShopPage({ brandName, brandTagline, brandStyle, items }:
                 Jan&apos;s
               </span>
               <span
-                className="text-5xl sm:text-6xl md:text-8xl text-nw-ink uppercase leading-none mt-1 sm:mt-2"
+                className="text-5xl sm:text-6xl md:text-8xl text-nw-ink uppercase leading-none mt-2 sm:mt-3"
                 style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}
               >
                 SHOP
               </span>
             </div>
           )}
-          <div className="w-12 sm:w-16 h-[1px] bg-nw-gold/40 mx-auto mt-6 sm:mt-8" />
-          <p className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-nw-charcoal/50 mt-3 sm:mt-4">
+          <div className="w-12 sm:w-16 h-[1px] bg-nw-gold/40 mx-auto mt-8 sm:mt-10" />
+          <p className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-nw-charcoal/50 mt-4 sm:mt-5">
             {brandTagline}
           </p>
         </div>
       </header>
 
-      {/* Product Gallery — 2 cols on mobile, 3 on lg. Styled to match shop-card-inspo.png */}
+      {/* Product Gallery — 2 cols on mobile, 3 on lg */}
       <main className="bg-nw-offwhite">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-16 py-12 sm:py-20 md:py-28">
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 sm:gap-x-12 sm:gap-y-20 md:gap-x-16 md:gap-y-24">
@@ -111,9 +111,9 @@ export default function ShopPage({ brandName, brandTagline, brandStyle, items }:
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-nw-offwhite py-10 border-t border-nw-charcoal/10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-16 flex flex-col sm:flex-row justify-between items-center text-[9px] sm:text-[10px] font-mono tracking-[0.15em] sm:tracking-[0.2em] text-nw-charcoal/50 gap-4 sm:gap-6">
+      {/* Footer — cleaned up and spacious */}
+      <footer className="bg-nw-offwhite py-16 sm:py-24 border-t border-nw-charcoal/10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-16 flex flex-col sm:flex-row justify-between items-center text-[9px] sm:text-[10px] font-mono tracking-[0.15em] sm:tracking-[0.2em] text-nw-charcoal/50 gap-6 sm:gap-8">
           <div className="flex items-center gap-3 sm:gap-4">
             <span className="font-serif font-bold text-nw-ink tracking-[0.2em] sm:tracking-[0.3em] text-xs">NGUOWAY</span>
             <span className="text-nw-charcoal/20">|</span>

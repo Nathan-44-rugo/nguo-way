@@ -35,13 +35,13 @@ export default function Hero({ stage }: HeroProps) {
         backgroundColor: 'var(--nw-slate)',
       }}
     >
-      {/* Subtle technical grid */}
+      {/* Subtle technical grid — reduced density and opacity for a clean, spacious aesthetic */}
       <div
-        className="absolute inset-0 z-10 pointer-events-none opacity-[0.06]"
+        className="absolute inset-0 z-10 pointer-events-none opacity-[0.03]"
         style={{
           backgroundImage:
             'linear-gradient(to right, var(--nw-charcoal) 1px, transparent 1px), linear-gradient(to bottom, var(--nw-charcoal) 1px, transparent 1px)',
-          backgroundSize: '48px 48px',
+          backgroundSize: '96px 96px',
         }}
       />
 
@@ -51,7 +51,7 @@ export default function Hero({ stage }: HeroProps) {
         <img
           src="/nguoway-hero.jpg"
           alt="Nguoway Viewport Backdrop"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           style={{
             transform: `scale(${1 + displayProgress * 0.03})`,
             filter: `blur(${displayProgress * 8}px) brightness(${1 - displayProgress * 0.15})`,
@@ -94,14 +94,14 @@ export default function Hero({ stage }: HeroProps) {
         </span>
       </div>
 
-      {/* Layer 1: CTA Text Overlay */}
+      {/* Layer 1: CTA Text Overlay — perfectly centered vertically and horizontally */}
       <div
         style={{
           opacity: displayProgress,
-          transform: `translateY(${(1 - displayProgress) * 30}px)`,
+          transform: `translateY(${(1 - displayProgress) * 20}px)`,
           pointerEvents: displayProgress > 0.1 ? 'auto' : 'none',
           willChange: 'transform, opacity',
-          transition: 'transform 800ms cubic-bezier(0.16, 1, 0.3, 1), opacity 800ms cubic-bezier(0.16, 1, 0.3, 1)',
+          transition: 'transform 900ms cubic-bezier(0.16, 1, 0.3, 1), opacity 900ms cubic-bezier(0.16, 1, 0.3, 1)',
         }}
         className="absolute inset-0 z-30 flex flex-col justify-center items-center px-6 md:px-12"
       >
