@@ -27,7 +27,7 @@ export default function ShopCard({
 
   return (
     <div
-      className={`group relative flex flex-col justify-between items-center py-14 px-8 border cursor-pointer ${
+      className={`group relative flex flex-col justify-between items-center py-10 sm:py-14 px-5 sm:px-8 border cursor-pointer ${
         isActive
           ? 'border-nw-gold/40 bg-nw-offwhite shadow-[0_8px_40px_rgba(163,131,86,0.08)]'
           : 'border-nw-charcoal/10 hover:border-nw-gold/25 bg-transparent'
@@ -43,13 +43,13 @@ export default function ShopCard({
         }}
       />
 
-      <div className="w-full flex flex-col items-center justify-center h-32 mb-10 select-none">
+      <div className="w-full flex flex-col items-center justify-center h-24 sm:h-32 mb-6 sm:mb-10 select-none">
         {cardType === 'vicks' && (
           <div className="text-center flex flex-col items-center">
-            <span className="font-serif italic text-5xl md:text-6xl text-[#1E3B27] font-light leading-none">
+            <span className="font-serif italic text-4xl sm:text-5xl md:text-6xl text-[#1E3B27] font-light leading-none">
               Vick&apos;s
             </span>
-            <span className="font-serif text-2xl md:text-3xl font-extrabold tracking-[0.3em] text-[#1E3B27] leading-none mt-3">
+            <span className="font-serif text-xl sm:text-2xl md:text-3xl font-extrabold tracking-[0.2em] sm:tracking-[0.3em] text-[#1E3B27] leading-none mt-2 sm:mt-3">
               CORNER
             </span>
           </div>
@@ -60,7 +60,7 @@ export default function ShopCard({
             <span className="font-mono text-[10px] font-bold uppercase tracking-[0.35em] text-nw-gold mb-3 leading-none">
               EGO&apos;s
             </span>
-            <span className="font-serif italic text-4xl md:text-5xl text-nw-ink font-light leading-none">
+            <span className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-nw-ink font-light leading-none">
               Boutique
             </span>
           </div>
@@ -72,7 +72,7 @@ export default function ShopCard({
               Jan&apos;s
             </span>
             <span
-              className="text-5xl md:text-6xl text-nw-ink uppercase leading-none mt-1 select-none"
+              className="text-4xl sm:text-5xl md:text-6xl text-nw-ink uppercase leading-none mt-1 select-none"
               style={{
                 fontFamily: 'system-ui, -apple-system, sans-serif',
                 fontWeight: 900,
@@ -96,7 +96,7 @@ export default function ShopCard({
         )}
       </div>
 
-      <Link
+      <Link 
         href={shopRoutes[cardType] || '#'}
         className="mt-8 font-mono text-[9px] tracking-[0.3em] uppercase text-nw-charcoal/40 group-hover:text-nw-gold border-b border-transparent group-hover:border-nw-gold/30 pb-0.5"
         style={{ transition: 'all 600ms cubic-bezier(0.16, 1, 0.3, 1)' }}
