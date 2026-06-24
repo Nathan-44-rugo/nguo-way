@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -65,7 +66,7 @@ export default function Hero({ stage }: HeroProps) {
         />
         {/* Technical gradient overlay for premium lighting & readability */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-nw-ink/20 via-nw-ink/40 to-nw-ink/75 z-10"
+          className="absolute inset-0 bg-linear-to-brom-nw-ink/20 via-nw-ink/40 to-nw-ink/75 z-10"
           style={{
             opacity: 0.3 + displayProgress * 0.45,
             willChange: 'opacity',
@@ -106,10 +107,6 @@ export default function Hero({ stage }: HeroProps) {
         className="absolute inset-0 z-30 flex flex-col justify-center items-center px-6 md:px-12"
       >
         <div className="text-center max-w-2xl px-4 sm:px-6 py-8 flex flex-col items-center justify-center pointer-events-auto select-none w-full">
-          <p className="font-mono text-[8px] sm:text-[9px] tracking-[0.4em] sm:tracking-[0.5em] uppercase text-nw-gold mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
-            AVATAR STYLE ENGINE
-          </p>
-
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl tracking-tight text-nw-offwhite font-light mb-10 drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)] leading-[1.15]">
             The Art of{' '}
             <span className="italic font-normal text-nw-gold">Virtual Style</span>

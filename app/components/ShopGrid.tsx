@@ -37,17 +37,19 @@ export default function ShopGrid({
   activeCreatorId,
 }: ShopGridProps) {
   return (
-    <section id="studios" className="py-24 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
-      <div className="text-center mb-20">
+    <section id="studios" className="py-24 md:py-32 px-6 md:px-16 max-w-7xl mx-auto scroll-mt-20">
+      <div className="text-center mb-20 max-w-3xl mx-auto">
         <p className="font-mono text-[9px] tracking-[0.5em] uppercase text-nw-gold mb-4">
-          Boutique Directory
+          The Creative System
         </p>
-        <h2 className="font-serif text-3xl md:text-5xl tracking-[0.15em] font-light text-nw-ink">
-          CHECK IT OUT
+        <h2 className="font-serif text-3xl md:text-5xl tracking-[0.1em] font-light text-nw-ink uppercase leading-tight">
+          Sovereign Streetwear
         </h2>
         <div className="w-16 h-[1px] bg-nw-gold/40 mx-auto mt-6" />
-        <p className="font-mono text-[10px] md:text-xs text-nw-charcoal/50 max-w-lg mx-auto mt-4 leading-relaxed">
-          Virtual Fashion experience open to all — make &amp; find a style
+        <p className="font-mono text-[10px] md:text-[11px] text-nw-charcoal/70 tracking-wide leading-relaxed max-w-2xl mx-auto mt-6">
+          Nguoway is an immersive avatar styling sandbox where virtual garments are modular assets. 
+          Select a creator boutique to explore custom digital wearables, layer modular clothes, 
+          and build your style profile directly in the sandbox lab.
         </p>
       </div>
 
