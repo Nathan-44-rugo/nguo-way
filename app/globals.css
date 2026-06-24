@@ -64,8 +64,9 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--nw-charcoal); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--nw-gold); }
 
-/* Custom Sandbox Page styles */
-.sandbox-viewport-container {
+/* Custom Game Page styles (Sandbox & User Portal) */
+.sandbox-viewport-container,
+.user-portal-viewport-container {
   aspect-ratio: 16 / 9;
   width: 100%;
   height: auto;
@@ -79,11 +80,14 @@ body {
 
 @media (max-width: 1024px) and (orientation: portrait) {
   .rotated-sandbox-header,
-  .rotated-sandbox-footer {
+  .rotated-sandbox-footer,
+  .rotated-portal-header,
+  .rotated-portal-footer {
     display: none !important;
   }
   
-  .sandbox-page-content {
+  .sandbox-page-content,
+  .user-portal-page-content {
     padding: 0 !important;
     margin: 0 !important;
     width: 100vw !important;
@@ -94,7 +98,8 @@ body {
     background: #1c1a1b !important;
   }
 
-  .sandbox-viewport-container {
+  .sandbox-viewport-container,
+  .user-portal-viewport-container {
     position: fixed !important;
     top: 50% !important;
     left: 50% !important;

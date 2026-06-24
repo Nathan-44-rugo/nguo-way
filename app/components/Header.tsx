@@ -15,6 +15,7 @@ export default function Header() {
           <div className="hidden md:flex space-x-6 sm:space-x-8 text-[9px] tracking-[0.25em] font-mono uppercase text-nw-charcoal/70">
             <a href="#studios" className="hover:text-nw-gold transition-colors duration-300">Creators</a>
             <a href="/sandbox" className="hover:text-nw-gold transition-colors duration-300">Sandbox</a>
+            <a href="/user-portal" className="hover:text-nw-gold transition-colors duration-300">User Portal</a>
           </div>
 
           {/* Spaced Wordmark Branding — centered */}
@@ -57,7 +58,7 @@ export default function Header() {
         onClick={() => setIsMenuOpen(false)}
       />
 
-      {/* Slide-out Menu Drawer (slides leftwards from the right) */}
+      {/* Slide-out Menu Drawer */}
       <div
         className={`fixed top-0 right-0 h-screen w-72 bg-nw-offwhite shadow-2xl border-l border-nw-charcoal/10 z-50 md:hidden flex flex-col justify-between pt-24 pb-16 px-10 transition-transform duration-500 ease-out transform ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
@@ -89,6 +90,13 @@ export default function Header() {
             className="hover:text-nw-gold duration-300 block py-1"
           >
             Sandbox
+          </a>
+          <a 
+            href="/user-portal" 
+            onClick={() => setIsMenuOpen(false)} 
+            className="hover:text-nw-gold duration-300 block py-1"
+          >
+            User Portal
           </a>
           <a 
             href="#newsletter" 

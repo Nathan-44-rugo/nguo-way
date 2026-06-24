@@ -113,11 +113,11 @@ export default function Hero({ stage }: HeroProps) {
       {/* Layer 1: CTA Text Overlay — perfectly centered vertically and horizontally */}
       <div
         style={{
-          opacity: displayProgress,
-          transform: `translateY(${(1 - displayProgress) * 20}px)`,
-          pointerEvents: displayProgress > 0.1 ? 'auto' : 'none',
+          opacity: isRevealed ? 1 : 0,
+          transform: isRevealed ? 'translateY(0)' : 'translateY(20px)',
+          pointerEvents: isRevealed ? 'auto' : 'none',
           willChange: 'transform, opacity',
-          transition: 'transform 900ms cubic-bezier(0.16, 1, 0.3, 1), opacity 900ms cubic-bezier(0.16, 1, 0.3, 1)',
+          transition: 'transform 1200ms cubic-bezier(0.16, 1, 0.3, 1), opacity 1200ms cubic-bezier(0.16, 1, 0.3, 1)',
         }}
         className="absolute inset-0 z-30 flex flex-col justify-center items-center px-6 md:px-12"
       >
