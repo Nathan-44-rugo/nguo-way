@@ -123,7 +123,7 @@ export default function Hero({ stage }: HeroProps) {
               Shop Studios
             </a>
             <a
-              href="#sandbox"
+              href="/sandbox"
               className="w-full sm:w-auto px-10 sm:px-12 py-3.5 sm:py-4 border border-white/30 bg-white/5 backdrop-blur-md text-white font-mono text-[10px] tracking-[0.25em] sm:tracking-[0.3em] uppercase hover:bg-nw-offwhite hover:text-nw-ink hover:border-nw-offwhite text-center transition-all duration-500 ease-out"
             >
               Avatar Sandbox
