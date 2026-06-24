@@ -66,9 +66,15 @@ body {
 
 /* Custom Sandbox Page styles */
 .sandbox-viewport-container {
+  aspect-ratio: 16 / 9;
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-width: calc((100vh - 160px) * 16 / 9); /* Fit available vertical space on desktop */
+  max-height: 100%;
+  margin: auto;
   position: relative;
+  background: #000;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 1024px) and (orientation: portrait) {
@@ -80,20 +86,26 @@ body {
   .sandbox-page-content {
     padding: 0 !important;
     margin: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #1c1a1b !important;
   }
 
   .sandbox-viewport-container {
     position: fixed !important;
     top: 50% !important;
     left: 50% !important;
-    width: 100vh !important;
-    height: 100vw !important;
+    width: 100vh !important; /* Rotated width equals physical height */
+    height: auto !important;
+    max-height: 100vw !important; /* Rotated height cannot exceed physical width */
+    max-width: calc(100vw * 16 / 9) !important; /* 16:9 ratio mapping */
     transform: translate(-50%, -50%) rotate(90deg) !important;
     transform-origin: center center !important;
     z-index: 10000 !important;
-    background: #1c1a1b !important;
+    background: #000 !important;
     border: none !important;
     border-radius: 0 !important;
   }

@@ -34,7 +34,7 @@ export default function SandboxPage() {
       </div>
 
       {/* High-Fidelity Responsive Game Viewport */}
-      <div className="sandbox-page-content grow w-full p-2 sm:p-4 md:p-6 relative bg-nw-offwhite">
+      <div className="sandbox-page-content flex-grow w-full p-2 sm:p-4 md:p-6 flex items-center justify-center relative bg-[#FAF9F6]">
         <div className="sandbox-viewport-container bg-[#E4E8E9] border border-neutral-200/60 shadow-lg rounded-sm overflow-hidden">
           <iframe 
             src="/game/index.html" 
