@@ -15,7 +15,7 @@ export default function Header() {
           <div className="hidden md:flex space-x-6 sm:space-x-8 text-[9px] tracking-[0.25em] font-mono uppercase text-nw-charcoal/70">
             <a href="#studios" className="hover:text-nw-gold transition-colors duration-300">Creators</a>
             <a href="/sandbox" className="hover:text-nw-gold transition-colors duration-300">Sandbox</a>
-            <a href="/user-portal" className="hover:text-nw-gold transition-colors duration-300">User Portal</a>
+            <a href="https://nguowayuser.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-nw-gold transition-colors duration-300">User Portal</a>
           </div>
 
           {/* Spaced Wordmark Branding — centered */}
@@ -92,7 +92,9 @@ export default function Header() {
             Sandbox
           </a>
           <a 
-            href="/user-portal" 
+            href="https://nguowayuser.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsMenuOpen(false)} 
             className="hover:text-nw-gold duration-300 block py-1"
           >
