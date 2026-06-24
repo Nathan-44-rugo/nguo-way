@@ -3,39 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | Nguo Way</title>
+    <title>Unity Web Player | entrepreneurship-Jam</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <style>
-      html, body {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-        background: #1c1a1b;
-      }
-      #unity-container.unity-desktop {
-        width: 100% !important;
-        height: 100% !important;
-        left: 0 !important;
-        top: 0 !important;
-        transform: none !important;
-        position: absolute !important;
-      }
-      #unity-canvas {
-        width: 100% !important;
-        height: 100% !important;
-        display: block;
-      }
-      #unity-footer {
-        display: none !important;
-      }
-    </style>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1280 height=720 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -46,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-logo-title-footer"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Nguo Way</div>
+        <div id="unity-build-title">entrepreneurship-Jam</div>
       </div>
     </div>
     <script>
@@ -78,15 +52,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Builds.loader.js";
+      var loaderUrl = buildUrl + "/Enterpreneurship jam.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/Builds.data.unityweb",
-        frameworkUrl: buildUrl + "/Builds.framework.js.unityweb",
-        codeUrl: buildUrl + "/Builds.wasm.unityweb",
+        dataUrl: buildUrl + "/Enterpreneurship jam.data.br",
+        frameworkUrl: buildUrl + "/Enterpreneurship jam.framework.js.br",
+        codeUrl: buildUrl + "/Enterpreneurship jam.wasm.br",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "Nguo Way",
+        productName: "entrepreneurship-Jam",
         productVersion: "1.0",
         showBanner: unityShowBanner,
         // errorHandler: function(err, url, line) {
@@ -129,9 +103,9 @@
 
 
       } else {
-        // Desktop style: Render the game canvas responsively
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
+        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
