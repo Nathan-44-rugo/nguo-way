@@ -82,6 +82,7 @@ export default function HomePageClient() {
 
     const handleTouchMove = (e: TouchEvent) => {
       if (isTransitioning || stage === 'unlocked' || touchStartY.current === null) return;
+      if (e.cancelable) e.preventDefault();
       const diffY = touchStartY.current - e.touches[0].clientY;
       if (Math.abs(diffY) > 30) {
         if (stage === 'art' && diffY > 0) {

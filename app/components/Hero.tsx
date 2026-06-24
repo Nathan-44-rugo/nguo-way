@@ -48,15 +48,16 @@ export default function Hero({ stage }: HeroProps) {
 
       {/* Layer 0: Full-Bleed Background Image & Gradients */}
       <div className="absolute inset-0 w-full h-full z-0 select-none">
+        {/* Sharp Background Layer */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/nguoway-hero.jpg"
           alt="Nguoway Viewport Backdrop"
           className="absolute inset-0 w-full h-full object-cover object-center"
           style={{
-            transform: `scale(${1 + displayProgress * 0.03})`,
-            filter: `blur(${displayProgress * 8}px) brightness(${1 - displayProgress * 0.15})`,
-            willChange: 'transform, filter',
+            transition: 'transform 1400ms cubic-bezier(0.16, 1, 0.3, 1)',
+            transform: isRevealed ? 'scale(1.03)' : 'scale(1)',
+            willChange: 'transform',
           }}
           onError={(e) => {
             e.currentTarget.style.display = 'none';
@@ -64,11 +65,25 @@ export default function Hero({ stage }: HeroProps) {
             if (fallback) fallback.style.display = 'flex';
           }}
         />
+        {/* Pre-blurred Background Layer (fades in on reveal, avoiding WebKit mobile filter blur lag) */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/nguoway-hero.jpg"
+          alt="Nguoway Viewport Backdrop Blurred"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{
+            transition: 'transform 1400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 1400ms cubic-bezier(0.16, 1, 0.3, 1)',
+            transform: isRevealed ? 'scale(1.03)' : 'scale(1)',
+            filter: 'blur(8px) brightness(0.85)',
+            opacity: isRevealed ? 1 : 0,
+            willChange: 'transform, opacity',
+          }}
+        />
         {/* Technical gradient overlay for premium lighting & readability */}
         <div
-          className="absolute inset-0 bg-linear-to-brom-nw-ink/20 via-nw-ink/40 to-nw-ink/75 z-10"
+          className="absolute inset-0 bg-linear-to-b from-nw-ink/20 via-nw-ink/40 to-nw-ink/75 z-10 transition-opacity duration-1200"
           style={{
-            opacity: 0.3 + displayProgress * 0.45,
+            opacity: isRevealed ? 0.75 : 0.3,
             willChange: 'opacity',
           }}
         />
